@@ -1,2 +1,3 @@
-# blog
-my blog
+hexo server
+
+hexo d -g
