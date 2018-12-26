@@ -124,7 +124,8 @@ export KUBECONFIG=/etc/kubernetes/kubelet.conf
  刚刚kubeadm init执行后输出的join命令可以在另外两台work node上面跑，跑完之后 Run **kubectl get nodes** on the master to see this machine join.
 
 * 总结
- 至此，执行kubectl get pods --all-namespaces可能会报错，可能是网络的问题， 通过journalctl -xeu kubelet查看相关日志，我是通过重启服务器来解决的
+ 1. 至此，执行kubectl get pods --all-namespaces可能会报错，可能是网络的问题， 通过journalctl -xeu kubelet查看相关日志，我是通过重启服务器来解决的
+ 2. 建议重启的时候先启动work node，最后启动master，然后等待5分钟执行kubectl get pods
  
 ## master上配置dashboard
 
