@@ -164,6 +164,7 @@ https://<node-ip>:<nodePort>
 ```
 kubeadm reset
 kubectl describe pods
+kubectl get svc -n default  
 journalctl -u kubelet.service
 journalctl -xeu kubelet(查看日志)
 kubectl get pods --all-namespaces
