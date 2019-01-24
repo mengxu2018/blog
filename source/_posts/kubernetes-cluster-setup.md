@@ -162,6 +162,7 @@ https://<node-ip>:<nodePort>
 
 ## 相关命令
 ```
+kubectl exec -it  curl-66959f6557-8m7tt  -- /bin/bash
 kubeadm reset
 kubectl describe pods
 kubectl get svc -n default  
