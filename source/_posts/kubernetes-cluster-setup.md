@@ -171,4 +171,6 @@ journalctl -xeu kubelet(查看日志)
 kubectl get pods --all-namespaces
 kubectl get pods -n kube-system -owide
 kubectl logs -n kube-system kubernetes-dashboard-56bcddb89b-wbcqg
+kubectl describe pod -n istio-system istio-cleanup-secrets-vmbxl
+
 ```
