@@ -5,7 +5,7 @@ tags:
 ![mysql 8](/images/mysql-8.png)
 
 ## Install MySQL YUM repository and mysql
-* yum localinstall https://dev.mysql.com/get/mysql80-community-release-el7-1.noarch.rpm
+* yum localinstall https://dev.mysql.com/get/mysql80-community-release-el7-1.noarch.rpm (这个仅仅是安装/etc/yum.repos.d)
 * yum install mysql-community-server
 
 

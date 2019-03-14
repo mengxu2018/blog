@@ -19,3 +19,6 @@ tags:
 - h2是非常好的数据库，可以方便他人迅速部署自己的项目
 
 - hibernate N+1问题通过join fetch来解决是一个可以选择的办法
+
+## code example
+https://gitprod.company.com/employeeid/spring/tree/master/spring-mvc-jpa-h2
