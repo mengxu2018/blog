@@ -36,6 +36,15 @@ Yes, this has made people much more confused.
 Let’s start with the biggest reason why OAuth isn’t authentication: access tokens are not intended for the client application.
 https://www.scottbrady91.com/OAuth/OAuth-is-Not-Authentication
 
+## code
+代码https://github.com/mengxu2018/springboot/tree/master/github-oauth2
+文档https://spring.io/guides/tutorials/spring-boot-oauth2/
+
+代码https://github.com/mengxu2018/springboot/tree/master/oauth2_test
+文档https://www.javainuse.com/spring/spring-boot-oauth-access-token
+https://www.aha.io/api/oauth2
+
+https://projects.spring.io/spring-security-oauth/docs/oauth2.html
 
 
 ## 总结
