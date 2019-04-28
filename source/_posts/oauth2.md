@@ -45,7 +45,7 @@ https://www.scottbrady91.com/OAuth/OAuth-is-Not-Authentication
 https://www.aha.io/api/oauth2
 
 https://projects.spring.io/spring-security-oauth/docs/oauth2.html
-
+https://security.stackexchange.com/questions/37818/why-use-openid-connect-instead-of-plain-oauth2
 
 ## 总结
 oauth是一个授权框架， 只不过授权之前需要登陆，但是这个并不代表oauth是认证框架，
