@@ -44,13 +44,15 @@ https://maven.apache.org/plugins/maven-compiler-plugin/compile-mojo.html#forceJa
 
 ## scala compiler
 scala的编译器是通过scala.version来指定的，具体可以看.m2\repository\org\scala-lang\scala-compiler\2.11.7
+```
 <properties>
     <!--specify scala compiler, 2.12 will fail-->
     <!--.m2\repository\org\scala-lang\scala-compiler\2.11.7-->
     <!--you can find that the jars are named with 2.11 scala, D:\software\spark-2.4.1-bin-hadoop2.7\jars\spark-core_2.11-2.4.1.jar-->
     <scala.version>2.11.7</scala.version>
 </properties>
-
+```
+```
 <plugin>
     <groupId>net.alchim31.maven</groupId>
     <artifactId>scala-maven-plugin</artifactId>
@@ -70,3 +72,4 @@ scala的编译器是通过scala.version来指定的，具体可以看.m2\reposit
         </jvmArgs>
     </configuration>
 </plugin>
+```
