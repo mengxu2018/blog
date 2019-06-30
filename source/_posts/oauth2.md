@@ -1,6 +1,7 @@
 ---
 title:  oauth2
 tags:
+date: 2019-04-15 22:51:52
 ---
 
 - Authentication is the process of verifying an identity (who they say they are)

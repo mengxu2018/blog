@@ -1,5 +1,6 @@
 ---
 title: win10 disable auto-update
+date: 2019-06-12 22:51:52
 ---
 
 被windows 10 自动更新折磨了很久，今天终于找到了办法

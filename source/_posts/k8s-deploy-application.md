@@ -1,5 +1,6 @@
 ---
 title: k8s deploy sample apps
+date: 2019-01-06 22:51:52
 ---
 ### Create a backend and frontend app
 

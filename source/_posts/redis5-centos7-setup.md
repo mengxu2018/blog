@@ -1,6 +1,7 @@
 ---
 title: redis5 centos7 setup
 tags:
+date: 2019-03-31 22:51:52
 ---
 
 ## Install redis

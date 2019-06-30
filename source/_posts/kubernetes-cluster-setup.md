@@ -14,7 +14,7 @@ tags:
 * 关于网络配置可以参考[CentOS 7 minimal 版本安装后网络配置](https://www.cnblogs.com/hfyfpga/p/6262057.html)
  * 简单来说就是在nmtui打开的gui界面里面配置网卡自动启动
 * 需要提醒的是nmtui打开的界面里面，通过tab切换按钮，通过空格而不是回车选择checkbox
-* 网卡启动之后yum install -y net-tools安装网络工具
+* 网卡启动之后yum install -y net-tools安装网络工d具
 * ipconfig得到ip地址之后，强烈建议使用MobaXterm连接vm， 这个比putty好用很多，免费版就够用
 
 ## 禁用防火墙
@@ -159,6 +159,9 @@ kubectl get pods -n kube-system -owide
 https://<node-ip>:<nodePort>
 ```
 不过因为没有安全证书，所以chrome和ie禁止访问，只能通过Firefox增加exception来访问，后续可以研究下更好的访问dashboard方法
+
+## 设置固定ip
+https://blog.csdn.net/u014466635/article/details/80284792
 
 ## 相关命令
 ```

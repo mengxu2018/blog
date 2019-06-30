@@ -1,5 +1,6 @@
 ---
 title: elasticsearch quickstart
+date: 2019-02-17 22:51:52
 tags:
 ---
 
