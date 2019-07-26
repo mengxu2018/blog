@@ -1,6 +1,7 @@
 ---
 title: hadoop spark cluster setup
 date: 2019-06-23 22:51:52
+tags: spark
 ---
 
 ![spark architecture](/images/spark-cluster.png)

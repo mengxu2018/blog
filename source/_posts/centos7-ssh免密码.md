@@ -1,7 +1,7 @@
 ---
 title: ssh password-less
 date: 2019-06-01 22:51:52
-tags:
+tags: security
 ---
 
 ### pre

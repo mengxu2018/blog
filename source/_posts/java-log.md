@@ -1,7 +1,7 @@
 ---
 title: java log implemention
 date: 2019-03-26 22:51:52
-tags:
+tags: java
 ---
 
 ## logback for spring data jpa

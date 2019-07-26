@@ -1,7 +1,7 @@
 ---
 title: first dubbo
 date: 2019-04-26 22:51:52
-tags:
+tags: dubbo
 ---
 
 ## intro

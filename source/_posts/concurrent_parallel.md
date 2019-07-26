@@ -1,7 +1,7 @@
 ---
 title: 并发并行
 date: 2019-06-26 22:51:52
-tags:
+tags: java
 ---
 tomcat哪怕在多核cpu中运行，也还是多线程并发，不算并行
 tomcat内部使用多线程，但是操作系统会把这些现场分布到多个cpu core里面

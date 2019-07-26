@@ -1,7 +1,7 @@
 ---
 title: hostname设置
 date: 2019-06-01 22:51:52
-tags:
+tags: linux
 ---
 
 hostnamectl set-hostname 'k8smaster'

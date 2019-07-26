@@ -1,7 +1,7 @@
 ---
 title: IO
 date: 2019-03-07 22:51:52
-tags:
+tags: java
 ---
 
 ## sample code, charset related

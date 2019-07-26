@@ -1,6 +1,7 @@
 ---
 title: docker command
 date: 2019-01-16 22:51:52
+tag: docker
 ---
 
 ``` 

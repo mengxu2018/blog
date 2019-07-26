@@ -1,7 +1,7 @@
 ---
 title: node.js module.export
 date: 2019-01-26 22:51:52
-tags:
+tags: nodejs
 ---
 
 ## module.export

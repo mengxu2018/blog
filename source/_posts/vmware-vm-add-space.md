@@ -1,6 +1,7 @@
 ---
 title: 虚拟机增加空间
 date: 2019-03-14 22:51:52
+tags: cloud
 ---
 
 ## add space

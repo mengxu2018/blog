@@ -1,7 +1,7 @@
 ---
 title: mongodb centos7 setup
 date: 2019-01-17 22:51:52
-tags:
+tags: mongodb
 ---
 
 ## Install 

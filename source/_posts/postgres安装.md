@@ -1,6 +1,7 @@
 ---
 title: postgres安装
 date: 2019-06-16 22:51:52
+tag: database
 ---
 
 

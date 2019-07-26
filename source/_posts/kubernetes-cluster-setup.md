@@ -1,7 +1,7 @@
 ---
 title: kubernetes cluster setup
 date: 2018-12-24 22:51:52
-tags:
+tags: kubernetes
 ---
 ![kubernetes architecture](/images/Kubernetes.png)
 

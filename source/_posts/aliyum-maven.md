@@ -1,7 +1,7 @@
 ---
 title: aliyun maven
 date: 2019-05-26 22:51:52
-tags:
+tags: maven
 ---
 
 put below in pom.xml

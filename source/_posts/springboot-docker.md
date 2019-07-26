@@ -1,7 +1,7 @@
 ---
 title: sprintboot docker deployment
 date: 2019-03-31 22:51:52
-tags:
+tags: spring
 ---
 
 ## build code

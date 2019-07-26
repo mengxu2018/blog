@@ -1,6 +1,6 @@
 ---
-title:  oauth2
-tags:
+title: oauth2
+tags: security
 date: 2019-04-15 22:51:52
 ---
 

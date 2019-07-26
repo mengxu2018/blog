@@ -1,7 +1,7 @@
 ---
 title: mysql8 centos7 setup
 date: 2019-03-09 22:51:52
-tags:
+tags: mysql
 ---
 ![mysql 8](/images/mysql-8.png)
 

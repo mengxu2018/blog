@@ -1,7 +1,7 @@
 ---
 title: update timezone
 date: 2019-05-30 22:51:52
-tags:
+tags: linux
 ---
 
 ## 修改时区

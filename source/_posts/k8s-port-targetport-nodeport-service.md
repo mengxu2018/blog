@@ -1,6 +1,7 @@
 ---
 title: k8s service port
 date: 2019-01-08 22:51:52
+tag: kubernetes
 ---
 
 *总的来说，port和nodePort都是service的端口，前者暴露给集群内客户访问服务，后者暴露给集群外客户访问服务。从这两个端口到来的数据都需要经过反向代理kube-proxy流入后端pod的targetPort，从而到达pod上的容器内。*

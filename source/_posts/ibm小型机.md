@@ -1,7 +1,7 @@
 ---
 title: IBM 的 POWER 处理器比较 X86 处理器
 date: 2019-06-13 22:51:52
-tags:
+tags: linux
 ---
 
 ## 硬件体系

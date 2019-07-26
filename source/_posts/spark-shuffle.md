@@ -1,7 +1,7 @@
 ---
 title: spark shuffle
 date: 2019-06-26 22:51:52
-tags:
+tags: spark
 ---
 
 the `Spark SQL` module contains the following default configuration: `spark.sql.shuffle.partitions` set to 200.
@@ -32,3 +32,8 @@ What is the difference between spark.sql.shuffle.partitions and spark.default.pa
 https://stackoverflow.com/questions/45704156/what-is-the-difference-between-spark-sql-shuffle-partitions-and-spark-default-pa
 spark.default.parallelism只有在处理RDD时才会起作用，对Spark SQL的无效。
 spark.sql.shuffle.partitions则是对sparks SQL专用的设置
+
+
+## 更新
+Shuffling is a process of redistributing data across partitions (aka repartitioning) that may or may not cause moving data across JVM processes or even over the wire (between executors on separate machines).
+所以shuffle 不一定是跨jvm或者node的操作，也可能一个stage，8个machine，8个task都shuffle 了，但是下一个stage只有一个task，在一个node上面运行，这个task的shuffle从当前的机器加上另外7台机器的数据 ，新的task应该还是之前的jvm，不是新启动一个jvm，还是在当前的executor上面

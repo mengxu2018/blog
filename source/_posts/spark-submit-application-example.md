@@ -1,7 +1,7 @@
 ---
 title: spark word count in practice
 date: 2019-06-24 22:51:52
-tags:
+tags: spark
 ---
 
 ## cluster ui spark-master-ui.PNG

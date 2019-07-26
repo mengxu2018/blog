@@ -1,7 +1,7 @@
 ---
 title: spark 权威指南 笔记
 date: 2019-06-30 22:51:52
-tags:
+tags: spark
 ---
 
 ## page 29
@@ -83,3 +83,57 @@ http://k8s-master:18080/history/app-20190628102443-0003/SQL/execution/?id=1
 Notice that in Figure 18-5 the number of output rows is six. This convienently lines up with
 the number of output rows（这个就是3） multiplied by the number of partitions（这个是4) at aggregation time. This is because Spark performs an
 aggregation for each partition (in this case a hash-based aggregation) before shuffling the data aroundin preparation for the final stage.
+
+## page 264
+Regardless of the number of partitions, that
+entire stage is computed in parallel. The final result aggregates those partitions individually, brings
+them all to a single partition before finally sending the final result to the driver. We’ll see this
+configuration several times over the course of this part of the book.
+
+Tasks
+Stages in Spark consist of tasks. `Each task corresponds to a combination of blocks of data and a set
+of transformations that will run on a single executor`. If there is one big partition in our dataset, we
+will have one task. If there are 1,000 little partitions, we will have 1,000 tasks that can be executed in
+parallel. A task is just a unit of computation applied to a unit of data (the partition). Partitioning your
+data into a greater number of partitions means that more can be executed in parallel. This is not a
+panacea, but it is a simple place to begin with optimization.
+
+## page 133
+```
+val df = spark.read.format("csv")
+.option("header", "true")
+.option("inferSchema", "true")
+.load("/FileStore/tables/retail-data/all/online_retail_dataset-92e8e.csv")
+```
+这个dateframe一共541909行数据
+```
+ df.groupBy("InvoiceNo", "CustomerId").count().count()
+``` 
+这个返回25900,说明分组之后的行是这么多
+df.groupBy("InvoiceNo", "CustomerId").count().show()
+这个可以看分组后的数据，这个count返回的是个dataset，所以可以继续执行count这个action
+这个job有两个stage，
+第一个stage有8个task，分别读取8分之1的数据，然后shuffle write， write的行书就是25907，
+第二个stage读取这些数据，上面8个分区的数据都是重复的group后的结果，所以继续汇总下，就是剩下25900行数据
+
+## page 57
+Overview of Structured Spark Types
+Spark is effectively a programming language of its own. Internally, Spark uses an engine called
+Catalyst that maintains its own type information through the planning and processing of work. In
+doing so, this opens up a wide variety of execution optimizations that make significant differences.
+Spark types map directly to the different language APIs that Spark maintains and there exists a lookup
+table for each of these in Scala, Java, Python, SQL, and R. Even if we use Spark’s Structured APIs
+from Python or R, the majority of our manipulations will operate strictly on Spark types, not Python
+types. For example, the following code does not perform addition in Scala or Python; it actually
+performs addition purely in Spark:
+下面是spark的dataset类型的编译时候就报错的解释例子
+```
+case class Person(name : String , age : Int)
+val personRDD = sc.makeRDD(Seq(Person("A",10),Person("B",20)))
+val personDF = sqlContext.createDataframe(personRDD)
+val ds:Dataset[Person] = personDF.as[Person]
+ds.filter(p => p.age > 25)
+ds.filter(p => p.salary > 25)
+ // error : value salary is not a member of person
+ds.rdd // returns RDD[Person]
+```

@@ -1,7 +1,7 @@
 ---
 title: 随机生成大文件
 date: 2019-06-03 22:51:52
-tags:
+tags: java
 ---
 
 ### code

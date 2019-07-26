@@ -1,6 +1,6 @@
 ---
 title:  spring jpa
-tags:
+tags: spring
 date: 2019-03-31 22:51:52
 ---
 

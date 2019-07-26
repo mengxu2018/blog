@@ -1,7 +1,7 @@
 ---
 title: old Hadoop Architecture
 date: 2019-06-13 22:51:52
-tags:
+tags: hadoop
 ---
 
 关于yarn之前的hadooop架构请参考下面这个文章

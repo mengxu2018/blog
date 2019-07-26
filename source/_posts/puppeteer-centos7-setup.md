@@ -1,7 +1,7 @@
 ---
 title: puppeteer centos7 setup
 date: 2019-01-31 22:51:52
-tags:
+tags: search
 ---
 
 ## Install node, npm
