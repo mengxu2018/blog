@@ -4,20 +4,18 @@ date: 2019-07-26 22:34:31
 tags: kafka
 ---
 
-1.稠密索引
-定义：它是由键值和指针(指向记录本身地址)组成的一系列存储块，该存储块的键值与文件的逻辑顺序一致。
-特性：每个存储块的每一个键对应的指针都指向每个数据块每一条记录，当要查找指定键 K 时，采用二分查找即可找到键K对应的记录，复杂度为 log2n。
+Index file stores the offsets and physical position of the message in the log file.
 
-2.稀疏索引
-定义：它是由键值和指针(指向记录本身地址)组成的一系列存储块，该存储块的键值与文件的逻辑顺序单调性一致。
-特性：每个存储块的每一个键对应的指针都指向每个数据块的第一条记录，当要查找指定建 K 时，先采用二分查找找到 <=K 的键 S，如果 S=K，则命中记录，如果 S<k，则顺序查找 =K 的键，复杂度大于 log2n，小于 n。
+If you need to read the message at offset 1, you first search for it in the index file and figure out that the message is in position 79. Then you directly go to position 79 in the log file and start reading. This makes it quite effective as you can use binary search to quickly get to the correct offset in the already sorted index file.
 
-比较：
-稀疏索引占用的索引存储空间比较小，但是查找时间较长；
-稠密索引查找时间较短，索引存储空间较大。
+kakfa内部用的是稀疏索引，一般来说每个block 512Kb，这样通过offset定位到512KB的数据，然后在这批数据中进行下一步查询，如果是 稠密索引就更简单了，直接定位到目标的record（因为segment中的消息是顺序写入的，稀疏索引定位到某个offset对应的512kB的block后是可以找到其中真正所需的消息的)
 
-kafka用的是稀疏索引
+![index](/images/kakfa-index.jpeg)
 
+稀疏索引中，左边的offset对应右边的消息，一个索引记录对应3个消息，真是的case可能是512Kb，比如offset为5的消息怎么定位呢？先找到索引记录3，然后找到右边具体的block，就是3到5，这个block肯定包含offset为5的记录，然后在这个有限数据中通过二分查找找到offset为5的记录效率会很快
+
+https://medium.com/r/?url=https%3A%2F%2Fwww2.cs.sfu.ca%2FCourseCentral%2F354%2Fzaiane%2Fmaterial%2Fnotes%2FChapter11%2Fnode5.html
+https://medium.com/@durgaswaroop/a-practical-introduction-to-kafka-storage-internals-d5b544f6925f
 https://medium.com/@durgaswaroop/a-practical-introduction-to-kafka-storage-internals-d5b544f6925f
 https://stackoverflow.com/questions/19394669/why-do-index-files-exist-in-the-kafka-log-directory
 https://tech.meituan.com/2015/01/13/kafka-fs-design-theory.html
