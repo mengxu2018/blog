@@ -17,3 +17,6 @@ https://stackoverflow.com/questions/43469281/how-to-predict-input-image-using-tr
 
 image classification
 https://github.com/mengxu2018/machine-learning
+
+看这个文章
+https://my.oschina.net/andyfeng/blog/2208657
