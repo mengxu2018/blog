@@ -8,7 +8,10 @@ tag: database
 ## 安装
 https://www.postgresql.org/download/linux/redhat/
 官方提供的了新建repo然后yum的安装方式，非常的方便，可以指定版本`yum install postgresql10`
+
 ```
+yum install postgresql10
+yum install postgresql10-server
 /usr/pgsql-10/bin/postgresql-10-setup initdb
 systemctl enable postgresql-10
 systemctl start postgresql-10

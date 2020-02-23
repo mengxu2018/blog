@@ -26,6 +26,10 @@ NodePort在node上，负责对外通信，NodeIP:NodePort
 ContainerPort在容器上，用于被pod绑定
 
 targetPort在pod上、负责与kube-proxy代理的port和Nodeport数据进行通信
+
+总结:targetPort很好理解，targetPort是pod上的端口，从port和nodePort上到来的数据最终经过kube-proxy流入到后端pod的targetPort上进入容器。
+https://blog.csdn.net/yjk13703623757/article/details/79819415
+
 ```
 
 ```

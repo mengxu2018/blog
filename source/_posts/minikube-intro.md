@@ -4,7 +4,7 @@ date: 2020-01-27 20:44:15
 tags: kubernetes
 ---
 
-## steps 
+## minikube 
 https://kubernetes.io/docs/setup/learning-environment/minikube/
 
 安装好centos后因为之前设置静态ip的时候对vmware进行了设置，所以现在除了nmtui之外，也必须修改/etc/sysconfig/network-scripts/ifcfg-ens33
@@ -30,7 +30,8 @@ sysctl net.bridge.bridge-nf-call-iptables=1
 
 
 minikube start --vm-driver=none（not suggest,可能会有kubernetes版本不被istio支持的问题)
-minikube start --memory=4096 --cpus=4 --kubernetes-version=v1.15 --vm-driver=none(--kubernetes-version可以不带)
+minikube start --memory=4096 --cpus=4 --kubernetes-version=v1.15 --vm-driver=none(--kubernetes-version可以不带，有时候带会有错误)
+minikube start --memory=4096 --cpus=4 --vm-driver=none
 minikube dashboard --url
 
 
@@ -120,15 +121,24 @@ istio-system这个namespace下面去找label为istio: ingressgateway的gateway p
 如果要自己创建一个自定义的gateway controller pod的话，参考https://stackoverflow.com/questions/51835752/how-to-create-custom-istio-ingress-gateway-controller，简单说就是需要创建一个新的gateway pod资源，这个资源会在某个namespace下面，
 然后在创建gateway resource并且指定他的namespace，同时指定selector匹配gateway pod资源
 
+https://istio.io/blog/2019/custom-ingress-gateway/这个文章的第七点说明type: LoadBalancer可以创建一个gateway controller pod，
+在上面的so文章也有人回答‘In fact, it is very simple. Istio's ingress is just a regular Kubernetes Service of "Load Balancer" type.’
+但是有待验证
 
 
+关于gateway，这个文章https://istio.io/docs/tasks/traffic-management/ingress/ingress-control/最好，
+在minikube上面其实就是默认的ingress gateway通过nodeport暴露出来，所以访问具体的service其实是访问的这个gateway，
+ingress说的其实就是这个gateway。
+VirtualService里面的hosts应该说的重复字段，实际上destination里也有这个字段
+https://blog.csdn.net/kozazyh/article/details/81477629这里就说明了这个重复
 
 ## troubleshooting
+
+### network issue due to iptables
 kubectl get pods -n istio-system
 kubectl get pods -n kube-system
 上面两个namespace下面的pod如果有下面的问题的话，就刷新iptables
 none: coredns CrashLoopBackOff: dial tcp ip:443: connect: no route to host #4350
-
 
 systemctl stop kubelet
 systemctl stop docker
@@ -137,7 +147,26 @@ iptables -tnat --flush
 systemctl start kubelet
 systemctl start docker
 
-## ref
+### multiply container due to the istio
+When retrieving logs for pods that have multiple containers, you need to specify the container you want the logs for.
+For example:
+```
+kubectl logs productpage-v1-84f77f8747-8zklx -c productpage
+```
+The reason is because Istio adds a second container to deployments via the istio-sidecar-injector. This is what adds the envoy proxy in front of all of your pods traffic.
+
+### why kube-dns and core-dns both exist
+kubectl get deployments -n kube-system
+kubectl get pods -n kube-public
+上面得到coredns
+kubectl get svc -n kube-system
+上面得到kube-dns
+但是如果kubectl describe -n kube-system service/kube-dns就会发现
+他的Selector: k8s-app=kube-dns其实就是指向kubectl get pods -lk8s-app=kube-dns -n kube-system
+
+
+
+## reference
 https://istio.io/docs/examples/bookinfo/
 https://www.cnblogs.com/psy-code/p/9311104.html
 kubectl get node -o wide
