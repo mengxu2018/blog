@@ -60,6 +60,8 @@ The nodePort is 33333 which represents that test-service can be accessed via kub
 *Kubernetes 分配给 Service 一个固定 IP，这是一个虚拟 IP （也称为 ClusterIP），并不是一个真实存在的IP,而是由 Kubernetes 虚拟出来的。虚拟 IP 的范围通过 Kubernetes API Service 的启动参数--service-cluster-ip-range=10.254.0.0/16 配置*
 *虚拟 IP 属于 Kubernetes 内部的虚拟网络，外部是寻址不到的，在 Kubernetes 系统中，实际上是由 Kubernetes Proxy 组件负责实现虚拟 IP 路由和转发的，所以在 Kubernetes Node 中我们都运行了 Kubernetes Proxy，从而在容器覆盖网络之上又实现了 Kubernetes 层级的虚拟转发网络。*
 
+更新与2020/5/12
+target port是 pod上面的端口， port是service的端口， nodeport是主机的端口， nodeport映射到port最终进入pod的端口targetport
  
 
 *https://blog.csdn.net/xinghun_4/article/details/50492041*
