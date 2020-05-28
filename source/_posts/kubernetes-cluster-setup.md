@@ -21,6 +21,8 @@ tags: kubernetes
 *本地开发或者学习环境，为了简单，直接disable防火墙*
 ```
 systemctl disable firewalld
+systemctl stop firewalld
+
 
 ```
 
