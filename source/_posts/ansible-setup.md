@@ -1,12 +1,19 @@
 ---
 title: ansible setup
 date: 2020-03-21 20:44:15
-tags: kubernetes
+tags: automation
 ---
+
+## 先升级到python3
+参考另外的文章
+
 
 ## 安装可以下载centos版本的rpm
 https://cbs.centos.org/koji/buildinfo?buildID=27713
-至于依赖的其他package，可以yum来安装
+至于依赖的其他package，可以yum来安装,如果需要管理windows机器就需要使用pip来安装ansible，否则管理windows的python模块不能识别
+```
+pip3 install --user ansible
+```
 
 ## ssh免登录
 http://getansible.com/begin/an_zhuang_ansile
