@@ -38,4 +38,16 @@ pip3 install --user ansible
 
 ```
 
+## wrm服务
+这个服务在windows server2016是默认打开的，通过命令winrm quickconfig可以打开，提示默认打开，当然这个只是http的方式，https需要证书打开
+
+## authentication 
+https://docs.ansible.com/ansible/latest/user_guide/windows_winrm.html#basic
+Basic authentication is one of the simplest authentication options to use, but is also the most insecure. This is because the username and password are simply base64 encoded, and if a secure channel is not in use (eg, HTTPS) then it can be decoded by anyone. Basic authentication can only be used for local accounts (not domain accounts).
+
+
+https://docs.ansible.com/ansible/latest/user_guide/windows_setup.html#winrm-setup
+这一步把basic authentication给打开了，basic需要用户名密码，但是可能需要先执行这个powershell脚本来enable
+
+
 ## 总结下就是google和百度一起搜找问题的答案
