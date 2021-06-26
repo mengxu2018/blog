@@ -21,5 +21,7 @@ date: 2019-03-31 22:51:52
 
 - hibernate N+1问题通过join fetch来解决是一个可以选择的办法
 
+- 在 JPA 中不建议使用 Entity 实体对象间的一对多、多对多之类的功能，也就是说 Entity 之间尽量独立，要关联查询时，通过 JPQL 或者 SQL 查询或更新就行，避免一些级联关系之间的隐式操作，代码含义更透明，方便应对后续的扩展或针对性的优化改造。
+
 ## code example
 https://gitprod.company.com/employeeid/spring/tree/master/spring-mvc-jpa-h2

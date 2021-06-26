@@ -169,7 +169,7 @@ https://blog.csdn.net/u014466635/article/details/80284792
 ```
 kubectl exec -it  curl-66959f6557-8m7tt  -- /bin/bash
 kubeadm reset
-kubectl describe pods
+kubectl describe pods {podname}
 kubectl get svc -n default  
 journalctl -u kubelet.service
 journalctl -xeu kubelet(查看日志)
@@ -178,4 +178,9 @@ kubectl get pods -n kube-system -owide
 kubectl logs -n kube-system kubernetes-dashboard-56bcddb89b-wbcqg
 kubectl describe pod -n istio-system istio-cleanup-secrets-vmbxl
 
+
+kubectl get nodes
+kubectl describe node $nodename
+
 ```
+

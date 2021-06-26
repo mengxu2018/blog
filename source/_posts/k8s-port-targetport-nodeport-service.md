@@ -55,6 +55,7 @@ The nodePort is 33333 which represents that test-service can be accessed via kub
 *nodeport是外部机器访问的端口，这个是刚刚到kube-proxy的时候，还没有进入具体的pod*
 *targetport是具体的port的监听端口，比如mysql的3306，就是dockerfile里面的expose端口*
 *port是内部pod直接的访问端口，这个端口也是刚刚到kube-proxy的时候，还没有进入具体的pod，这个跟nodeport一个级别，
+他也是service上面的端口
 比如mysql的targetport虽然是3306，但是cluster里面的pod可能通过33306来访问mysql pod*
 
 *Kubernetes 分配给 Service 一个固定 IP，这是一个虚拟 IP （也称为 ClusterIP），并不是一个真实存在的IP,而是由 Kubernetes 虚拟出来的。虚拟 IP 的范围通过 Kubernetes API Service 的启动参数--service-cluster-ip-range=10.254.0.0/16 配置*

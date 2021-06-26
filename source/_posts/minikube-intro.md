@@ -31,8 +31,11 @@ sysctl net.bridge.bridge-nf-call-iptables=1
 
 minikube start --vm-driver=none（not suggest,可能会有kubernetes版本不被istio支持的问题)
 minikube start --memory=4096 --cpus=4 --kubernetes-version=v1.15 --vm-driver=none(--kubernetes-version可以不带，有时候带会有错误)
-minikube start --memory=4096 --cpus=4 --vm-driver=none
+minikube start --memory=6096 --cpus=4 --vm-driver=none
 minikube dashboard --url
+
+
+minikube start --memory=3072mb --cpus=2 --vm-driver=docker
 
 
 下面是部署一个sample
