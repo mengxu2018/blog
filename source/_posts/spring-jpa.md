@@ -1,7 +1,7 @@
 ---
 title:  spring jpa
 tags: spring
-date: 2019-03-31 22:51:52
+date: 2021-06-26 22:51:52
 ---
 
 ## spring jpa tips
