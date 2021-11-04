@@ -20,3 +20,7 @@ If the JDK designers didn't introduce the concept of default methods then all th
 So to facilitate the adoption of lambdas and the use of the new functional interfaces like Consumer, Supplier, Predicate, etc. the JDK designers introduced the concept of default methods to provide backward compatibility and it is now easier to switch to Java - 8 without making any changes.
 
 If you don't like the default implementation in the interface you can override it and supply your own.
+
+## java线程池
+https://www.baeldung.com/java-runnable-callable
+Runnable和Callable区别
