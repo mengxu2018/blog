@@ -1,11 +1,13 @@
 ---
-title: aliyun maven
+title: maven
 date: 2019-05-26 22:51:52
 tags: maven
 ---
 
-https://developer.aliyun.com/mvn/guide
 
+### 阿里云配置
+
+https://developer.aliyun.com/mvn/guide
 
 
 
@@ -43,6 +45,16 @@ put below in pom.xml
     </pluginRepositories>
 ```
 
+如果setting统一配置如下
+```
+<mirror>
+  <id>aliyunmaven</id>
+  <mirrorOf>*</mirrorOf>
+  <name>阿里云公共仓库</name>
+  <url>https://maven.aliyun.com/repository/public</url>
+</mirror>
+```
+
 put below in build.gradle
 
 ```
@@ -68,3 +80,6 @@ allprojects {
     }
 }
 ```
+
+### maven搜索顺序
+https://cloud.tencent.com/developer/article/1532388

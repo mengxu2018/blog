@@ -24,3 +24,10 @@ If you don't like the default implementation in the interface you can override i
 ## java线程池
 https://www.baeldung.com/java-runnable-callable
 Runnable和Callable区别
+
+
+## 时间日期问题
+https://gitee.com/mengxu2018/jdk-new-feature/tree/master/jdk8-datetime
+
+如果用jpa可以看下面文章，老的jdk一般用java.sql.Timestamp,可以看到这个是sql这个package下面的
+https://www.baeldung.com/jpa-java-time

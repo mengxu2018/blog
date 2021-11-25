@@ -53,3 +53,56 @@ Bag of Words (BoW) Term Frequency
 Word2Vec
 
 Machine learning with natural language is faced with one major hurdle – its algorithms usually deal with numbers, and natural language is, well, text. So we need to transform that text into numbers, otherwise known as text vectorization. It’s a fundamental step in the process of machine learning for analyzing data, and different vectorization algorithms will drastically affect end results, so you need to choose one that will deliver the results you’re hoping for.
+
+
+### 梯度下降与梯度上升
+在机器学习算法中，在最小化损失函数时，可以通过梯度下降思想来求得最小化的损失函数和对应的参数值，反过来，如果要求最大化的损失函数，可以通过梯度上升思想来求取。
+
+### Definitions of Train, Validation, and Test Datasets
+https://machinelearningmastery.com/difference-test-validation-datasets/
+
+训练集-----------学生的课本；学生 根据课本里的内容来掌握知识。
+
+验证集-----------作业，通过作业可以知道 不同学生学习情况、进步的速度快慢。
+
+测试集-----------考试，考的题是平常都没有见过，考察学生举一反三的能力。
+
+那么为什么要测试集呢？
+
+a)训练集直接参与了模型调参的过程，显然不能用来反映模型真实的能力（防止课本死记硬背的学生拥有最好的成绩，即防止过拟合)。
+
+b)验证集参与了人工调参(超参数)的过程，也不能用来最终评判一个模型（刷题库的学生不能算是学习好的学生）。
+
+c)所以要通过最终的考试(测试集)来考察一个学(模)生(型)真正的能力（期末考试）。
+
+验证数据应该也是有label的，但是测试数据应该是没有label的，就是用来测试看看结果怎么样
+
+### What is Noise in Machine Learning
+https://deepchecks.com/glossary/noise-in-machine-learning/
+
+Humans are prone to making mistakes when collecting data, and data collection instruments may be unreliable, resulting in dataset errors. The errors are referred to as noise. Data noise in machine learning can cause problems since the algorithm interprets the noise as a pattern and can start generalizing from it.
+
+
+### keras vs tf.keras
+https://www.pyimagesearch.com/2019/10/21/keras-vs-tf-keras-whats-the-difference-in-tensorflow-2-0/
+
+
+### false positive 假阳性
+https://www.pico.net/kb/what-is-a-false-positive-rate/
+False Positive
+A False Positive is the incorrect identification of anomalous data as such, i.e. classifying as “abnormal” data which is in fact normal.
+实际上是对的，但是predict出来说有问题，比如我们邮件敏感信息预测，我们告诉用户有敏感信息，但是实际上没有，我们需要降低fp
+
+### 回归评价指标MSE、RMSE、MAE、R-Squared
+https://www.jianshu.com/p/9ee85fdad150
+
+
+### 欠拟合与过拟合
+https://zhuanlan.zhihu.com/p/72038532
+对于深度学习或机器学习模型而言，我们不仅要求它对训练数据集有很好的拟合（训练误差），同时也希望它可以对未知数据集（测试集）有很好的拟合结果（泛化能力），所产生的测试误差被称为泛化误差。度量泛化能力的好坏，最直观的表现就是模型的过拟合（overfitting）和欠拟合（underfitting）
+
+
+### hyperparameter vs parameter
+https://www.geeksforgeeks.org/difference-between-model-parameters-vs-hyperparameters/
+简单说就是parameter就是模型训练的过程中自己自动调节的，比如线性回归的x前面的系数
+hyperparameter就是我们给模型设置的参数，比如sklearn那些方法的参数，比如sklearn.cluster.KMeans的n_clusters
