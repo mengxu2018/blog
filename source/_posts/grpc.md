@@ -5,5 +5,4 @@ tags: grpc
 ---
 
 ## code
-这个例子是用maven插件从.proto文件到java文件的
-https://github.com/mengxu2018/grpc
+https://github.com/mengxu2018/grpc-first
