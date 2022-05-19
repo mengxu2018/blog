@@ -36,3 +36,8 @@ OAuth2是一个相对复杂的协议, 有4种授权模式, 其中的access code�
 
 oauth2的的资源服务器校验token
 http://springcloud.cn/view/431
+
+
+jwt存储在哪里
+可以cookie或者localstorage
+https://www.jianshu.com/p/e91fa0eaddd1

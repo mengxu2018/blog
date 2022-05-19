@@ -42,6 +42,13 @@ tags: kafka
 
 所以说消费消息的时候，最好不要同时再发送消息又操作数据库，不要同时操作两个资源
 
+update on 2022.4.22
+今天发现filewatch上面有部分重复消息，虽然我们有机制,检查数据库避免重复消费，但是我们需要分析下原因
+1. 我们的consumer抛出了异常，可能就没办法commit offset了，这个时候offset会被reset到上一次的offset，然后就会导致一部分的消息被重复消费
+2. 出现了rebalance，可能因为长时间心跳检测不到，这个时候也会重新分配了分区，也可能会导致之前的offset没有commit
+https://kafka.apache.org/22/javadoc/org/apache/kafka/clients/consumer/ConsumerRebalanceListener.html
+
+
 
 ### reference
 https://blog.51cto.com/u_15281317/3007783#3__51

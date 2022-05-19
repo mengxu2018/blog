@@ -1,7 +1,7 @@
 ---
 title: machine learning basic
 date: 2021-11-06 13:27:07
-tags: java
+tags: machine learning
 ---
 
 ### 方差
@@ -106,3 +106,11 @@ https://zhuanlan.zhihu.com/p/72038532
 https://www.geeksforgeeks.org/difference-between-model-parameters-vs-hyperparameters/
 简单说就是parameter就是模型训练的过程中自己自动调节的，比如线性回归的x前面的系数
 hyperparameter就是我们给模型设置的参数，比如sklearn那些方法的参数，比如sklearn.cluster.KMeans的n_clusters
+
+
+### 特征向量
+A dataset is usually divided into a number of instances, each with its own set of features. Each example corresponds to a single feature vector, which contains all of the numerical values for that example object.
+
+All of the feature vectors are normally stacked into a design matrix, with each row representing a vector for one example and each column representing all of the examples’ values for that feature.
+
+https://deepchecks.com/glossary/feature-vector/

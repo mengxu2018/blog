@@ -19,5 +19,7 @@ http://www.jasongj.com/2015/03/10/KafkaColumn1/#Kafka-delivery-guarantee
 https://www.jianshu.com/p/475589f5cd7b
 
 baeldung也有文章介绍这个问题，
-In this tutorial, we’ll look at how Kafka ensures exactly-once delivery between producer and consumer applications through the newly introduced Transactional API.
+In this tutorial, we’ll look at how Kafka ensures exactly-once delivery between producer and consumer applications through the newly introduced Transactional API. （这里说的exactly once其实是针对的kafka stream application)
 https://www.baeldung.com/kafka-exactly-once
+
+ 

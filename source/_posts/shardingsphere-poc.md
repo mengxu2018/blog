@@ -7,7 +7,7 @@ tags: database
 ### 搭建postgres环境
 分库我们就简单在本地postgres instance创建两个db来测试，分表是fw，fw2
 ![postgres-two-db](/images/postgres-two-db.PNG)
-创建一个叫xuhang的schema
+fw创建一个叫xuhang的schema,fw2创建一个叫xuhang2的schema
 ```
 jdbc:postgresql://localhost:5433/fw?currentSchema=xuhang
 jdbc:postgresql://localhost:5433/fw2?currentSchema=xuhang
